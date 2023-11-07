@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5529798869557676265}
   - component: {fileID: 5529798869557676268}
   - component: {fileID: 5529798869557676271}
+  - component: {fileID: 358964410058124909}
   m_Layer: 0
   m_Name: PlayerCharacter
   m_TagString: Untagged
@@ -58,6 +59,7 @@ MonoBehaviour:
   NestedObjects: []
   NetworkedBehaviours:
   - {fileID: 5529798869557676271}
+  - {fileID: 358964410058124909}
   SimulationBehaviours: []
 --- !u!143 &5529798869557676268
 CharacterController:
@@ -105,6 +107,20 @@ MonoBehaviour:
     RotTeleportRadians: 1.5
   UseLegacySharedModeInterpolation: 0
   TargetInterpolationDelay: 0.03
+--- !u!114 &358964410058124909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5529798869557676264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fcb56f1c64ca6c408bd0d94e49e4aa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interpolationDataSource: 0
+  PlayerSpeed: 2
 --- !u!1 &5529798870834078245
 GameObject:
   m_ObjectHideFlags: 0
