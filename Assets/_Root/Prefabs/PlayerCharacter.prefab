@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 5529798869557676271}
   - component: {fileID: 358964410058124909}
   - component: {fileID: 8949245220539921530}
+  - component: {fileID: 8428310085668366172}
+  - component: {fileID: 2396567492232199766}
   m_Layer: 0
   m_Name: PlayerCharacter
   m_TagString: Untagged
@@ -62,6 +64,8 @@ MonoBehaviour:
   - {fileID: 5529798869557676271}
   - {fileID: 358964410058124909}
   - {fileID: 8949245220539921530}
+  - {fileID: 8428310085668366172}
+  - {fileID: 2396567492232199766}
   SimulationBehaviours: []
 --- !u!143 &5529798869557676268
 CharacterController:
@@ -141,6 +145,35 @@ MonoBehaviour:
   _interpolationDataSource: 0
   MeshRenderer: {fileID: 5529798870834078251}
   _NetworkedColor: {r: 0, g: 0, b: 0, a: 0}
+--- !u!114 &8428310085668366172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5529798869557676264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a00133ac9787994b86a69ddbe83b6eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interpolationDataSource: 0
+  _NetworkedHealth: 100
+--- !u!114 &2396567492232199766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5529798869557676264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 040a0594d5e570549bff2a0948872e46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interpolationDataSource: 0
+  Damage: 0
+  PlayerMovement: {fileID: 358964410058124909}
 --- !u!1 &5529798870834078245
 GameObject:
   m_ObjectHideFlags: 0
