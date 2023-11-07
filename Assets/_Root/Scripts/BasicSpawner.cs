@@ -18,7 +18,7 @@ public class BasicSpawner : MonoBehaviour, INetworkRunnerCallbacks
         {
             if (GUI.Button(new Rect(0, 0, 200, 40), "Host"))
             {
-                StartGame(GameMode.Host);
+                StartGame(GameMode.AutoHostOrClient);
             }
             if (GUI.Button(new Rect(0, 40, 200, 40), "Join"))
             {
@@ -47,7 +47,6 @@ public class BasicSpawner : MonoBehaviour, INetworkRunnerCallbacks
     {
         if (runner.IsServer)
         {
-            Debug.Log("long");
             // Create a unique position for the player
             Vector3 spawnPosition = new Vector3((player.RawEncoded % runner.Config.Simulation.DefaultPlayers) * 3, 1, 0);
             NetworkObject networkPlayerObject = runner.Spawn(_playerPrefab, spawnPosition, Quaternion.identity, player);
@@ -64,6 +63,11 @@ public class BasicSpawner : MonoBehaviour, INetworkRunnerCallbacks
             _spawnedCharacters.Remove(player);
         }
     }
+    private bool _mouseButton0;
+    private void Update()
+    {
+        _mouseButton0 = _mouseButton0 | Input.GetMouseButton(0);
+    }
     public void OnInput(NetworkRunner runner, NetworkInput input)
     {
         var data = new NetworkInputData();
@@ -79,6 +83,10 @@ public class BasicSpawner : MonoBehaviour, INetworkRunnerCallbacks
 
         if (Input.GetKey(KeyCode.D))
             data.direction += Vector3.right;
+
+        if (_mouseButton0)
+            data.buttons |= NetworkInputData.MOUSEBUTTON1;
+        _mouseButton0 = false;
 
         input.Set(data);
     }
